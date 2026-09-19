@@ -105,7 +105,7 @@ export const VoiceHubTab: React.FC<VoiceHubTabProps> = ({ onOpenQR, onSelectQuer
       {/* 1. Header */}
       <div className="mb-4">
         <h2 className="text-[20px] font-extrabold text-[#0043cf] tracking-tight">
-          <span className="text-[#FFB800]">SAARTHI</span> Voice Hub
+          <span className="text-[#012b72]">SAARTHI</span> Voice Hub
         </h2>
         <p className="text-[13px] text-[#3d484f]">
           Voice command shortcuts & conversational history

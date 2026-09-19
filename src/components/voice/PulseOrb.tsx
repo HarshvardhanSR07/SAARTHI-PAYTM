@@ -32,7 +32,7 @@ export function PulseOrb({ state, className, onClick }: PulseOrbProps) {
       className={cn("loader-wrapper group", className)}
     >
       {letters.map((letter, i) => (
-        <span key={i} className={`loader-letter ${state === 'idle' ? 'text-[#FFB800]' : ''}`}>{letter}</span>
+        <span key={i} className={`loader-letter ${state === 'idle' ? 'text-[#012b72]' : ''}`}>{letter}</span>
       ))}
       <div className={loaderClass}></div>
     </div>

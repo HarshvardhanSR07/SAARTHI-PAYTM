@@ -37,7 +37,7 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({ onOpenStoreModal, on
               className="text-[20px] font-extrabold tracking-tight text-[#012b72] dark:text-white leading-none"
               style={{ fontFamily: 'var(--font-roboto), Roboto, sans-serif' }}
             >
-              <span className="text-[#FFB800]">SAARTHI</span>
+              <span className="text-[#012b72]">SAARTHI</span>
             </span>
             <Sparkles className="w-4 h-4 text-[#98a6b5] fill-[#98a6b5] mb-0.5" />
           </div>

@@ -85,7 +85,7 @@ export const SettingsTab: React.FC<SettingsTabProps> = ({ onOpenQR }) => {
               <option value="od-IN">Odia (India)</option>
             </select>
             <p className="text-[11px] text-[#6d7980] mt-1.5">
-              {appLanguage === 'hi-IN' ? <>यह सेटिंग <span className="text-[#FFB800]">सारथी</span> वॉइस असिस्टेंट के बोलने की भाषा बदलती है।</> : <>Controls the language spoken by the <span className="text-[#FFB800]">Saarthi</span> Voice Assistant.</>}
+              {appLanguage === 'hi-IN' ? <>यह सेटिंग <span className="text-[#012b72]">सारथी</span> वॉइस असिस्टेंट के बोलने की भाषा बदलती है।</> : <>Controls the language spoken by the <span className="text-[#012b72]">Saarthi</span> Voice Assistant.</>}
             </p>
           </div>
         </div>
@@ -154,7 +154,7 @@ export const SettingsTab: React.FC<SettingsTabProps> = ({ onOpenQR }) => {
 
       {/* 6. Footer branding */}
       <div className="text-center text-[11px] text-[#6d7980] space-y-1">
-        <p className="font-semibold text-[#0043cf]">Paytm <span className="text-[#FFB800]">Saarthi</span> Voice Assistant</p>
+        <p className="font-semibold text-[#0043cf]">Paytm <span className="text-[#012b72]">Saarthi</span> Voice Assistant</p>
         <p>Merchant Fintech Edition • Version 1.2.0</p>
       </div>
     </div>
