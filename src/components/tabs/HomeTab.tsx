@@ -331,7 +331,7 @@ export const HomeTab: React.FC<HomeTabProps> = ({ onNavigateToTab }) => {
           </div>
           <div className="flex-1">
             <h3 className="font-bold text-[#191c1e] text-[15px] mb-1">
-              {appLanguage === '📈 डिमांड रडार अलर्ट' : '📈 Demand Radar Alert'}
+              {appLanguage === 'hi-IN' ? '📈 डिमांड रडार अलर्ट' : '📈 Demand Radar Alert'}
             </h3>
             <p className="text-[#3d484f] text-[13px] leading-relaxed">
               {appLanguage === 'hi-IN'
@@ -362,7 +362,7 @@ export const HomeTab: React.FC<HomeTabProps> = ({ onNavigateToTab }) => {
           className="text-[24px] font-extrabold text-[#191c1e] tracking-tight leading-tight mb-1"
           style={{ fontFamily: 'var(--font-jakarta), sans-serif' }}
         >
-          {appLanguage === <>नमस्ते! मैं <span className="text-[#FFB800]">सारथी</span> हूँ 👋</> : <>Namaste! Main <span className="text-[#FFB800]">SAARTHI</span> hoon 👋</>}
+          {appLanguage === 'hi-IN' ? <>नमस्ते! मैं <span className="text-[#FFB800]">सारथी</span> हूँ 👋</> : <>Namaste! Main <span className="text-[#FFB800]">SAARTHI</span> hoon 👋</>}
         </h1>
         <p className="text-[14px] text-[#3d484f]">
           {appLanguage === 'hi-IN' ? `अपने ${selectedPeriod === 'daily' ? 'दैनिक' : selectedPeriod === 'weekly' ? 'साप्ताहिक' : 'मासिक'} व्यवसाय के बारे में मुझसे कुछ भी पूछें।` : `Ask me anything about your ${selectedPeriod} business.`}
