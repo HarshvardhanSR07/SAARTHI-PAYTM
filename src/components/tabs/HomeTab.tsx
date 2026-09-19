@@ -70,8 +70,8 @@ export const HomeTab: React.FC<HomeTabProps> = ({ onNavigateToTab }) => {
         sessionStorage.setItem('demand_alert_shown', 'true');
       }
       
-      const alertText = appLanguage === 'hi-IN' 
-        ? 'à¤¡à¤¿à¤®à¤¾à¤‚à¤¡ à¤°à¤¡à¤¾à¤° à¤…à¤²à¤°à¥à¤Ÿ: à¤¨à¤µà¤°à¤¾à¤¤à¥à¤°à¤¿ à¤•à¥‡ à¤²à¤¿à¤ à¤µà¥à¤°à¤¤ à¤•à¥‡ à¤¸à¤¾à¤®à¤¾à¤¨ à¤•à¥€ à¤®à¤¾à¤‚à¤— 55% à¤¬à¤¢à¤¼à¤¨à¥‡ à¤•à¥€ à¤‰à¤®à¥à¤®à¥€à¤¦ à¤¹à¥ˆà¥¤ à¤•à¥ƒà¤ªà¤¯à¤¾ à¤¸à¤¾à¤¬à¥‚à¤¦à¤¾à¤¨à¤¾ à¤”à¤° à¤•à¥à¤Ÿà¥à¤Ÿà¥‚ à¤•à¤¾ à¤†à¤Ÿà¤¾ à¤¤à¥ˆà¤¯à¤¾à¤° à¤°à¤–à¥‡à¤‚à¥¤' 
+      const alertText = appLanguage === 'hi-IN'
+        ? 'डिमांड रडार अलर्ट: नवरात्रि के लिए व्रत के सामान की मांग 55% बढ़ने की उम्मीद है। कृपया साबूदाना और कुट्टू का आटा तैयार रखें।'
         : 'Demand Radar Alert: Fasting essentials demand is expected to surge by 55% for Navratri. Please keep stock ready.';
       
       const formData = new FormData();
@@ -284,7 +284,7 @@ export const HomeTab: React.FC<HomeTabProps> = ({ onNavigateToTab }) => {
                   </span>
                   <div className="flex flex-col gap-0.5">
                     <span className="text-[11px] font-bold text-[#f4952d] uppercase tracking-wide">
-                      {appLanguage === 'hi-IN' ? 'à¤¸à¤¾à¤à¤¾ à¤‡à¤¨à¤¸à¤¾à¤‡à¤Ÿ' : <><span className="text-[#FFB800]">SAARTHI</span> Insight</>}
+                      {appLanguage === 'hi-IN' ? 'सारथी इनसाइट' : <><span className="text-[#FFB800]">SAARTHI</span> Insight</>}
                     </span>
                     <span className="text-[#191c1e] text-[13px] font-medium leading-snug line-clamp-2">
                       {currentQuery.insight || 'Your evening sales are consistently higher. Consider keeping fast-selling items stocked after 6 PM.'}
@@ -308,7 +308,7 @@ export const HomeTab: React.FC<HomeTabProps> = ({ onNavigateToTab }) => {
                   </span>
                   <div className="flex flex-col gap-0.5">
                     <span className="text-[11px] font-bold text-[#00a86b] uppercase tracking-wide flex items-center gap-1.5">
-                      {appLanguage === 'hi-IN' ? 'à¤¡à¤¿à¤®à¤¾à¤‚à¤¡ à¤…à¤²à¤°à¥à¤Ÿ' : 'Demand Nudge'}
+                      {appLanguage === 'hi-IN' ? 'डिमांड अलर्ट' : 'Demand Nudge'}
                       <span className="bg-[#ba1a1a] text-white text-[9px] px-1.5 py-0.5 rounded-full lowercase tracking-normal">New</span>
                     </span>
                     <span className="text-[#191c1e] text-[13px] font-medium leading-snug line-clamp-2">
@@ -331,11 +331,11 @@ export const HomeTab: React.FC<HomeTabProps> = ({ onNavigateToTab }) => {
           </div>
           <div className="flex-1">
             <h3 className="font-bold text-[#191c1e] text-[15px] mb-1">
-              {appLanguage === 'hi-IN' ? 'ðŸ“ˆ à¤¡à¤¿à¤®à¤¾à¤‚à¤¡ à¤°à¤¡à¤¾à¤° à¤…à¤²à¤°à¥à¤Ÿ' : 'ðŸ“ˆ Demand Radar Alert'}
+              {appLanguage === '📈 डिमांड रडार अलर्ट' : '📈 Demand Radar Alert'}
             </h3>
             <p className="text-[#3d484f] text-[13px] leading-relaxed">
-              {appLanguage === 'hi-IN' 
-                ? 'à¤¨à¤µà¤°à¤¾à¤¤à¥à¤°à¤¿ à¤•à¥‡ à¤²à¤¿à¤ à¤µà¥à¤°à¤¤ à¤•à¥‡ à¤¸à¤¾à¤®à¤¾à¤¨ à¤•à¥€ à¤®à¤¾à¤‚à¤— 55% à¤¬à¤¢à¤¼à¤¨à¥‡ à¤•à¥€ à¤‰à¤®à¥à¤®à¥€à¤¦ à¤¹à¥ˆà¥¤ à¤•à¥ƒà¤ªà¤¯à¤¾ à¤¸à¤¾à¤¬à¥‚à¤¦à¤¾à¤¨à¤¾ à¤”à¤° à¤•à¥à¤Ÿà¥à¤Ÿà¥‚ à¤•à¤¾ à¤†à¤Ÿà¤¾ à¤¤à¥ˆà¤¯à¤¾à¤° à¤°à¤–à¥‡à¤‚à¥¤' 
+              {appLanguage === 'hi-IN'
+                ? 'नवरात्रि के लिए व्रत के सामान की मांग 55% बढ़ने की उम्मीद है। कृपया साबूदाना और कुट्टू का आटा तैयार रखें।'
                 : 'Fasting essentials demand expected to surge by 55% for Navratri. Keep Sabudana and Kuttu Atta ready.'}
             </p>
             <div className="mt-3 flex gap-2">
@@ -343,13 +343,13 @@ export const HomeTab: React.FC<HomeTabProps> = ({ onNavigateToTab }) => {
                 onClick={() => setShowDemandPopup(false)} 
                 className="px-4 py-1.5 bg-[#f2f4f7] hover:bg-[#e0e3e6] text-[#3d484f] rounded-lg text-[12px] font-bold transition-colors"
               >
-                {appLanguage === 'hi-IN' ? 'à¤¹à¤Ÿà¤¾à¤à¤‚' : 'Dismiss'}
+                {appLanguage === 'hi-IN' ? 'हटाएं' : 'Dismiss'}
               </button>
               <button 
                 onClick={() => { setShowDemandPopup(false); if(onNavigateToTab) onNavigateToTab('festivals'); }} 
                 className="px-4 py-1.5 bg-[#0043cf] text-white rounded-lg text-[12px] font-bold shadow-sm transition-colors active:scale-95"
               >
-                {appLanguage === 'hi-IN' ? 'à¤¸à¥à¤Ÿà¥‰à¤• à¤¦à¥‡à¤–à¥‡à¤‚' : 'View Stock'}
+                {appLanguage === 'hi-IN' ? 'स्टॉक देखें' : 'View Stock'}
               </button>
             </div>
           </div>
@@ -362,10 +362,10 @@ export const HomeTab: React.FC<HomeTabProps> = ({ onNavigateToTab }) => {
           className="text-[24px] font-extrabold text-[#191c1e] tracking-tight leading-tight mb-1"
           style={{ fontFamily: 'var(--font-jakarta), sans-serif' }}
         >
-          {appLanguage === 'hi-IN' ? 'à¤¨à¤®à¤¸à¥à¤¤à¥‡! à¤®à¥ˆà¤‚ à¤¸à¤¾à¤°à¤¥à¥€ à¤¹à¥‚à¤ ðŸ‘‹' : <>Namaste! Main <span className="text-[#FFB800]">SAARTHI</span> hoon 👋</>}
+          {appLanguage === <>नमस्ते! मैं <span className="text-[#FFB800]">सारथी</span> हूँ 👋</> : <>Namaste! Main <span className="text-[#FFB800]">SAARTHI</span> hoon 👋</>}
         </h1>
         <p className="text-[14px] text-[#3d484f]">
-          {appLanguage === 'hi-IN' ? `à¤…à¤ªà¤¨à¥‡ ${selectedPeriod === 'daily' ? 'à¤¦à¥ˆà¤¨à¤¿à¤•' : selectedPeriod === 'weekly' ? 'à¤¸à¤¾à¤ªà¥à¤¤à¤¾à¤¹à¤¿à¤•' : 'à¤®à¤¾à¤¸à¤¿à¤•'} à¤µà¥à¤¯à¤µà¤¸à¤¾à¤¯ à¤•à¥‡ à¤¬à¤¾à¤°à¥‡ à¤®à¥‡à¤‚ à¤®à¥à¤à¤¸à¥‡ à¤•à¥à¤› à¤­à¥€ à¤ªà¥‚à¤›à¥‡à¤‚à¥¤` : `Ask me anything about your ${selectedPeriod} business.`}
+          {appLanguage === 'hi-IN' ? `अपने ${selectedPeriod === 'daily' ? 'दैनिक' : selectedPeriod === 'weekly' ? 'साप्ताहिक' : 'मासिक'} व्यवसाय के बारे में मुझसे कुछ भी पूछें।` : `Ask me anything about your ${selectedPeriod} business.`}
         </p>
       </div>
 
@@ -373,10 +373,10 @@ export const HomeTab: React.FC<HomeTabProps> = ({ onNavigateToTab }) => {
       <div className="flex flex-col items-center justify-center p-8 mb-6 relative overflow-hidden">
         <PulseOrb state={orbState} onClick={handleOrbClick} />
         <p className="mt-6 text-[15px] font-bold text-[#3d484f] tracking-wide">
-          {orbState === 'idle' && (appLanguage === 'hi-IN' ? 'à¤¬à¥‹à¤²à¤¨à¥‡ à¤•à¥‡ à¤²à¤¿à¤ à¤Ÿà¥ˆà¤ª à¤•à¤°à¥‡à¤‚' : <>Say "Hey <span className="text-[#FFB800]">Saarthi</span>" or Tap</>)}
-          {orbState === 'listening' && (appLanguage === 'hi-IN' ? 'à¤¸à¥à¤¨ à¤°à¤¹à¤¾ à¤¹à¥‚à¤...' : 'Listening...')}
-          {orbState === 'thinking' && (appLanguage === 'hi-IN' ? 'à¤¸à¥‹à¤š à¤°à¤¹à¤¾ à¤¹à¥‚à¤...' : 'Thinking...')}
-          {orbState === 'speaking' && (appLanguage === 'hi-IN' ? 'à¤¬à¥‹à¤² à¤°à¤¹à¤¾ à¤¹à¥‚à¤... (à¤°à¥‹à¤•à¤¨à¥‡ à¤•à¥‡ à¤²à¤¿à¤ à¤Ÿà¥ˆà¤ª à¤•à¤°à¥‡à¤‚)' : 'Speaking... (Tap to interrupt)')}
+          {orbState === 'idle' && (appLanguage === 'hi-IN' ? 'बोलने के लिए टैप करें' : <>Say "Hey <span className="text-[#FFB800]">Saarthi</span>" or Tap</>)}
+          {orbState === 'listening' && (appLanguage === 'hi-IN' ? 'सुन रहा हूँ...' : 'Listening...')}
+          {orbState === 'thinking' && (appLanguage === 'hi-IN' ? 'सोच रहा हूँ...' : 'Thinking...')}
+          {orbState === 'speaking' && (appLanguage === 'hi-IN' ? 'बोल रहा हूँ... (रोकने के लिए टैप करें)' : 'Speaking... (Tap to interrupt)')}
         </p>
       </div>
 
@@ -384,7 +384,7 @@ export const HomeTab: React.FC<HomeTabProps> = ({ onNavigateToTab }) => {
           <div className="mb-6 flex items-center gap-2 bg-white p-2 rounded-2xl border border-[#bcc8d0]/60 shadow-sm">
             <input
               type="text"
-              placeholder={appLanguage === 'hi-IN' ? 'à¤¯à¤¾ à¤…à¤ªà¤¨à¤¾ à¤ªà¥à¤°à¤¶à¥à¤¨ à¤¯à¤¹à¤¾à¤ à¤²à¤¿à¤–à¥‡à¤‚...' : 'Or type your question here...'}
+              placeholder={appLanguage === 'hi-IN' ? 'या अपना प्रश्न यहाँ लिखें...' : 'Or type your question here...'}
               value={textInput}
               onChange={(e) => setTextInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && textInput && handleQuerySubmit(textInput)}
@@ -412,7 +412,7 @@ export const HomeTab: React.FC<HomeTabProps> = ({ onNavigateToTab }) => {
                 : 'text-white/80 hover:text-white'
             }`}
           >
-            {appLanguage === 'hi-IN' ? (period === 'daily' ? 'à¤¦à¥ˆà¤¨à¤¿à¤•' : period === 'weekly' ? 'à¤¸à¤¾à¤ªà¥à¤¤à¤¾à¤¹à¤¿à¤•' : 'à¤®à¤¾à¤¸à¤¿à¤•') : period}
+            {appLanguage === 'hi-IN' ? (period === 'daily' ? 'दैनिक' : period === 'weekly' ? 'साप्ताहिक' : 'मासिक') : period}
           </button>
         ))}
       </div>
@@ -497,10 +497,10 @@ export const HomeTab: React.FC<HomeTabProps> = ({ onNavigateToTab }) => {
           <div className="flex flex-col gap-2">
             <div className="flex items-center justify-between px-1">
               <span className="text-[11px] font-bold text-[#6d7980] uppercase tracking-wider">
-                {appLanguage === 'hi-IN' ? 'à¤¸à¥à¤à¤¾à¤ à¤—à¤ à¤ªà¥à¤°à¤¶à¥à¤¨' : 'Suggested Questions'}
+                {appLanguage === 'hi-IN' ? 'सुझाए गए प्रश्न' : 'Suggested Questions'}
               </span>
               <span className="text-[11px] text-[#0043cf] font-semibold">
-                {appLanguage === 'hi-IN' ? 'à¤ªà¥‚à¤›à¤¨à¥‡ à¤•à¥‡ à¤²à¤¿à¤ à¤Ÿà¥ˆà¤ª à¤•à¤°à¥‡à¤‚' : 'Tap to ask'}
+                {appLanguage === 'hi-IN' ? 'पूछने के लिए टैप करें' : 'Tap to ask'}
               </span>
             </div>
 
