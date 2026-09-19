@@ -1,0 +1,77 @@
+{
+  "name": "Saarthi Scheduled Summaries and Live Q&A",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "saarthi-qa",
+        "options": {}
+      },
+      "name": "Live Q&A Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "webhookId": "saarthi-live-qa-trigger"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 18 * * *"
+            }
+          ]
+        }
+      },
+      "name": "Daily Summary Cron",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [250, 500]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.sarvam.ai/text-to-speech",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-subscription-key",
+              "value": "={{\\$env[\"SARVAM_API_KEY\"]}}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "inputs",
+              "value": "Here is your daily summary."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Sarvam TTS Generation",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [500, 500]
+    }
+  ],
+  "connections": {
+    "Daily Summary Cron": {
+      "main": [
+        [
+          {
+            "node": "Sarvam TTS Generation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {}
+}
