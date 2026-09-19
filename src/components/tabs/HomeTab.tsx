@@ -89,8 +89,11 @@ export const HomeTab: React.FC<HomeTabProps> = ({ onNavigateToTab }) => {
   };
 
   const handleOrbClick = async () => {
-    // Unlock audio element on user gesture
+    // Safely unlock audio element without re-playing old audio
     if (audioPlayerRef.current) {
+      audioPlayerRef.current.pause();
+      audioPlayerRef.current.removeAttribute('src');
+      audioPlayerRef.current.load();
       audioPlayerRef.current.volume = 0;
       audioPlayerRef.current.play().catch(() => {});
       audioPlayerRef.current.volume = 1;
@@ -131,8 +134,11 @@ export const HomeTab: React.FC<HomeTabProps> = ({ onNavigateToTab }) => {
     // If user types, we should stop background listening to avoid clashes
     stopAutoListen();
 
-    // Unlock audio element on user gesture
+    // Safely unlock audio element without re-playing old audio
     if (audioPlayerRef.current) {
+      audioPlayerRef.current.pause();
+      audioPlayerRef.current.removeAttribute('src');
+      audioPlayerRef.current.load();
       audioPlayerRef.current.volume = 0;
       audioPlayerRef.current.play().catch(() => {});
       audioPlayerRef.current.volume = 1;
