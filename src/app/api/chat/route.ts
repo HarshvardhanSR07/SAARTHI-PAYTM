@@ -93,7 +93,7 @@ export async function POST(req: Request) {
         - Operational Alerts: Fasting essentials (Sabudana) demand surging by 55% for Navratri.
       `;
 
-      const enrichedQuery = `System: You are Saarthi, a voice-interactive financial AI. Reply in concise conversational ${targetLanguageName} ONLY. Do not use English script if the language is regional.
+      const enrichedQuery = `System: You are Saarthi, a voice-interactive financial AI. Reply in concise conversational ${targetLanguageName} ONLY (maximum 3 short sentences, strictly under 400 characters). Do not use English script if the language is regional.
 If the user wants to log, add, or record a transaction/ledger entry (e.g. Udhaar, Jama, payment received, credit), include this exact string format AT THE VERY END of your response: ||ACTION_LEDGER:{"name":"<customer_name>", "amount":<amount_as_number>, "type":"<received|pending>"}||
 
 Business Context: ${businessIntelligence}
@@ -153,6 +153,13 @@ User Question: ${userText}`;
     // 3. TTS (Text to Speech) via Sarvam
     let audioBase64 = null;
     if (sarvamApiKey) {
+      // Sarvam TTS has a strict 500 character limit. Safely truncate at the last sentence boundary.
+      let safeTtsText = aiText;
+      if (safeTtsText.length > 490) {
+        const match = safeTtsText.slice(0, 490).match(/(.*[.!?\u0964\n])/s);
+        safeTtsText = match ? match[1] : safeTtsText.slice(0, 490) + '...';
+      }
+
       const ttsResponse = await fetch('https://api.sarvam.ai/text-to-speech', {
         method: 'POST',
         headers: {
@@ -160,7 +167,7 @@ User Question: ${userText}`;
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          inputs: [aiText],
+          inputs: [safeTtsText],
           target_language_code: reqLanguage, // Dynamic TTS language
           speaker: "priya",
           pitch: 0, pace: 1.05, loudness: 1.0, // Normalized for natural human tone
