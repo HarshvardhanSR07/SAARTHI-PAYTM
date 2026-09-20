@@ -1,4 +1,7 @@
-@AGENTS.md
+---
+description: Use when working with RocketRide pipelines, SDK, components, or configuration
+globs: ['**/*.pipe', '**/pipeline*.json', '**/*rocketride*']
+---
 
 <!-- ROCKETRIDE:BEGIN -->
 

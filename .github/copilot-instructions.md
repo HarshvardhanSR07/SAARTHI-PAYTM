@@ -1,5 +1,3 @@
-@AGENTS.md
-
 <!-- ROCKETRIDE:BEGIN -->
 
 # RocketRide: AI Pipeline Builder
