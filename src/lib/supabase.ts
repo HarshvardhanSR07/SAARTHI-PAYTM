@@ -1,12 +1,12 @@
 import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-if (!supabaseUrl || !supabaseKey) {
-  throw new Error('Missing Supabase environment variables');
+if (!supabaseUrl || !supabaseAnonKey) {
+  throw new Error('Missing Supabase public environment variables (NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY)');
 }
 
-// Use Service Role key for backend operations (if available) to bypass RLS,
-// otherwise fallback to anon key.
-export const supabase = createClient(supabaseUrl, supabaseKey);
+// Client-safe Supabase instance enforced with Row Level Security (RLS).
+// For privileged backend operations that bypass RLS, use supabaseServer from '@/lib/supabaseServer'.
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);
